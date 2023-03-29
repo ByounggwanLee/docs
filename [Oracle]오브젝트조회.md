@@ -1,4 +1,5 @@
-| Object | Command  |
+## 1. Object 조회 Query
+| 조회Object | Query  |
 |:--|---------|
 | User 확인|  select * from all_users;|
 | 등록된 User 목록 보기|  select username, user_id from dba_users order by username;|
@@ -16,3 +17,19 @@
 | 인덱스 생성 스크립트 확인|SELECT TO_CHAR(DBMS_METADATA.GET_DDL('INDEX','INDEX_NM')) SCRIPT FROM DUAL;|
 | 프로시저 생성 스크립트 확인|SELECT TO_CHAR(DBMS_METADATA.GET_DDL('PROCEDURE','PROC_NM')) SCRIPT FROM DUAL;|
 | 시퀀스 생성 스크립트 확인|SELECT TO_CHAR(DBMS_METADATA.GET_DDL('SEQUENCE','SEQ_NM')) SCRIPT FROM DUAL;|
+## 2. 생성스크립트 파일로 저장하기
+```
+set pagesize 0
+set long 90000
+set feedback off
+set echo off 
+
+spool board.sql 
+
+SELECT DBMS_METADATA.GET_DDL('TABLE', U.OBJECT_NAME) FROM USER_OBJECTS U WHERE OBJECT_TYPE='TABLE';
+SELECT DBMS_METADATA.GET_DDL('INDEX', U.OBJECT_NAME) FROM USER_OBJECTS U WHERE OBJECT_TYPE='INDEX';
+SELECT DBMS_METADATA.GET_DDL('SEQUENCE', U.OBJECT_NAME) FROM USER_OBJECTS U WHERE OBJECT_TYPE='SEQUENCE';
+SELECT DBMS_METADATA.GET_DDL('PROCEDURE', U.OBJECT_NAME) FROM USER_OBJECTS U WHERE OBJECT_TYPE='PROCEDURE';
+
+spool off
+```
