@@ -11,4 +11,8 @@
 | 테이블 인덱스 정보 조회|  select * from all_ind_columns where table_name='테이블명';|
 | 테이블의 컬럼 정보 조회|  select * from all_tab_columns where table_name='테이블명';|
 | table comment 쿼리|  select * from all_tab_comments where table_name='테이블명';|
-| column comment 쿼리|  select * from all_col_comments where table_name='테이블명'
+| column comment 쿼리|  select * from all_col_comments where table_name='테이블명'|
+| 테이블 생성 스크립트 확인|SELECT TO_CHAR(DBMS_METADATA.GET_DDL('TABLE','테이블')) SCRIPT FROM DUAL;|
+| 인덱스 생성 스크립트 확인|SELECT TO_CHAR(DBMS_METADATA.GET_DDL('INDEX','INDEX_NM')) SCRIPT FROM DUAL;|
+| 프로시저 생성 스크립트 확인|SELECT TO_CHAR(DBMS_METADATA.GET_DDL('PROCEDURE','PROC_NM')) SCRIPT FROM DUAL;|
+| 시퀀스 생성 스크립트 확인|SELECT TO_CHAR(DBMS_METADATA.GET_DDL('SEQUENCE','SEQ_NM')) SCRIPT FROM DUAL;|
