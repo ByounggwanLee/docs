@@ -24,21 +24,13 @@
 ## 2. Mapping Java to Database.com Data Types
 |Java Data Type|Database.com Data Type|Standard JPA Annotation|
 |:--------:|:--------:|:--------:|
-|boolean|Checkbox|N/A|
-|byte|Text (255) 1|@Column(length=255)|
-|char|Text (255)|@Column(length=255)|
-|short|Number (6, 0)2|@Column(precision=6, scale=0)|
-|int|Number (11, 0)|@Column(precision=11, scale=0)|
-|long|Number (18, 0)|@Column(precision=18, scale=0)|
-|double|Number (16, 2)|@Column(precision=16, scale=2)|
-|float|Number (16, 2)|@Column(precision=16, scale=2)|
-|Boolean|Checkbox|N/A|
-|Byte|Text (255)|@Column(length=255)|
-|Character|Text (255)|@Column(length=255)|
-|Short|Number (6, 0)|@Column(precision=6, scale=0)|
-|Integer|Number (11, 0)|@Column(precision=11, scale=0)|
-|Long|Number (18, 0)|@Column(precision=18, scale=0)|
-|Double|Number (16, 2)|@Column(precision=16, scale=2)|
+|boolean, Boolean|Checkbox|N/A|
+|byte, Byte|Text (255)|@Column(length=255)|
+|char, Character|Text (255)|@Column(length=255)|
+|short, Short|Number (6, 0)|@Column(precision=6, scale=0)|
+|int, Integer|Number (11, 0)|@Column(precision=11, scale=0)|
+|long, Long|Number (18, 0)|@Column(precision=18, scale=0)|
+|double, Double|Number (16, 2)|@Column(precision=16, scale=2)|
 |Float|Number (16, 2)|@Column(precision=16, scale=2)|
 |String|Text (255)|@Column(length=fieldLength)|
 |java.util.Date|Date|@Temporal(TemporalType.DATE)|
