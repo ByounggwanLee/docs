@@ -17,7 +17,16 @@
 3. copilot-instructions.md 기반 프로젝트 생성해줘
 ```
 # FeignClient 생성
-
+아래 URL을 분석하여
+```
+- URL: https://aip-stg.sktai.io/api/v1/agent/docs, https://aip-stg.sktai.io/api/v1/common/auth/docs, https://aip-stg.sktai.io/api/v1/data/docs,https://aip-stg.sktai.io/api/v1/knowledge/docs, https://aip.sktai.io/api/v1/model/docs,https://aip-stg.sktai.io/api/v1/evaluation/docs,https://aip-stg.sktai.io/api/v1/management/safety_filter/docs, https://aip-stg.sktai.io/api/v1/finetuning/docs, https://aip-stg.sktai.io/api/v1/serving/docs, https://aip-stg.sktai.io/api/v1/model_gateway/docs, https://aip-stg.sktai.io/api/v1/agent_gateway/docs, https://aip-stg.sktai.io/api/v1/management/resource/docs, https://aip-stg.sktai.io/api/v1/management/history/docs
+- Config, intercept는 /client/sktai/config, /client/sktai/intercept의 class에 생성
+- Inner Class생성금지
+- 공통으로 사용하는 DTO나 Inner Class는 client/sktai/common/dto에 생성
+- 분석한 URL별로 client/sktai/에 디렉토리를 생성
+  - Feign Client Interface는 접속 엔드포인트별로 생성
+  - dto는 dto디렉토리 생성 후 Request, Response에 각각 생성
+```
 # Feign기반 Controller, Service, DTO 생성
 ``` Bash
 for data in `find ./data -name SktAi*.java`
