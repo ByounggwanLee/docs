@@ -17,8 +17,21 @@
 3. copilot-instructions.md 기반 프로젝트 생성해줘
 ```
 # FeignClient 생성
-아래 URL을 분석하여
 ```
+for api in  https://aip-stg.sktai.io/api/v1/data https://aip-stg.sktai.io/api/v1/agent https://aip-stg.sktai.io/api/v1/knowledge https://aip.sktai.io/api/v1/model https://aip-stg.sktai.io/api/v1/evaluation https://aip-stg.sktai.io/api/v1/management/safety_filter https://aip-stg.sktai.io/api/v1/finetuning https://aip-stg.sktai.io/api/v1/serving https://aip-stg.sktai.io/api/v1/model_gateway https://aip-stg.sktai.io/api/v1/agent_gateway https://aip-stg.sktai.io/api/v1/management/resource https://aip-stg.sktai.io/api/v1/management/history
+do 
+    name=$(basename $api | sed 's/_//g')
+    # echo $name, $api
+	echo "- URL($api/openapi.json)를 참조" | tee -a imsi.txt
+    echo "  - Config, intercept는 /client/sktai/config, /client/sktai/intercept의 class를 참조하고 필요시 수정" | tee -a imsi.txt
+    echo "  - Feign Client Interface는 접속 엔드포인트별로 Group화하여 /client/sktax/$name 디렉토리에 생성" | tee -a imsi.txt
+    echo "  - dto는 /client/sktai/$name/dto/request, /client/sktai/$name/dto/response에 생성" | tee -a imsi.txt
+	echo "    - static class는 /client/sktai/$name/dto에 일반 class로 생성" | tee -a imsi.txt
+	echo "---" | tee -a imsi.txt
+done
+```
+```
+아래 URL을 분석하여
 - URL: https://aip-stg.sktai.io/api/v1/agent/docs, https://aip-stg.sktai.io/api/v1/common/auth/docs, https://aip-stg.sktai.io/api/v1/data/docs,https://aip-stg.sktai.io/api/v1/knowledge/docs, https://aip.sktai.io/api/v1/model/docs,https://aip-stg.sktai.io/api/v1/evaluation/docs,https://aip-stg.sktai.io/api/v1/management/safety_filter/docs, https://aip-stg.sktai.io/api/v1/finetuning/docs, https://aip-stg.sktai.io/api/v1/serving/docs, https://aip-stg.sktai.io/api/v1/model_gateway/docs, https://aip-stg.sktai.io/api/v1/agent_gateway/docs, https://aip-stg.sktai.io/api/v1/management/resource/docs, https://aip-stg.sktai.io/api/v1/management/history/docs
 - Config, intercept는 /client/sktai/config, /client/sktai/intercept의 class에 생성
 - Inner Class생성금지
