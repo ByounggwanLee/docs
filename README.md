@@ -1,413 +1,162 @@
-[공통] 마크다운 markdown 작성법
-======================
-
-> 영어지만, 조금 더 상세하게 마크다운 사용법을 안내하고 있는 
-> "Markdown Guide (https://www.markdownguide.org/)" 를 보시는 것을 추천합니다. ^^
-
-> 아, 그리고 마크다운만으로 표현이 부족하다고 느끼신다면, HTML 태그를 활용하시는 것도 좋습니다.
-
-
-# 1. 마크다운에 관하여
-## 1.1. 마크다운이란?
-[**Markdown**](https://www.markdownguide.org/getting-started/)은 텍스트 기반의 마크업언어로 2004년 존그루버에 의해 만들어졌으며 쉽게 쓰고 읽을 수 있으며 HTML로 변환이 가능하다. 특수기호와 문자를 이용한 매우 간단한 구조의 문법을 사용하여 웹에서도 보다 빠르게 컨텐츠를 작성하고 보다 직관적으로 인식할 수 있다.
-마크다운이 최근 각광받기 시작한 이유는 깃헙([https://github.com](https://github.com)) 덕분이다. 깃헙의 저장소Repository에 관한 정보를 기록하는 README.md는 깃헙을 사용하는 사람이라면 누구나 가장 먼저 접하게 되는 마크다운 문서였다. 마크다운을 통해서 설치방법, 소스코드 설명, 이슈 등을 간단하게 기록하고 가독성을 높일 수 있다는 강점이 부각되면서 점점 여러 곳으로 퍼져가게 된다.
-
-## 1.2. 마크다운의 장-단점
-### 1.2.1. 장점
-	1. 간결하다.
-	2. 별도의 도구없이 작성가능하다.
-	3. 다양한 형태로 변환이 가능하다.
-	4. 텍스트(Text)로 저장되기 때문에 용량이 적어 보관이 용이하다.
-	5. 텍스트파일이기 때문에 버전관리시스템을 이용하여 변경이력을 관리할 수 있다.
-	6. 지원하는 프로그램과 플랫폼이 다양하다.
-
-### 1.2.2. 단점
-	1. 표준이 없다.
-	2. 표준이 없기 때문에 도구에 따라서 변환방식이나 생성물이 다르다.
-	3. 모든 HTML 마크업을 대신하지 못한다.
-
-****
-# 2. 마크다운 사용법(문법)
-## 2.1. 헤더Headers
-* 큰제목: 문서 제목
-    ```
-    This is an H1
-    =============
-    ```
-    This is an H1
-    =============
-
-* 작은제목: 문서 부제목
-    ```
-    This is an H2
-    -------------
-    ```
-    This is an H2
-    -------------
-
-* 글머리: 1~6까지만 지원
-```
-# This is a H1
-## This is a H2
-### This is a H3
-#### This is a H4
-##### This is a H5
-###### This is a H6
-```
-# This is a H1
-## This is a H2
-### This is a H3
-#### This is a H4
-##### This is a H5
-###### This is a H6
-####### This is a H7(지원하지 않음)
-
-## 2.2. BlockQuote
-이메일에서 사용하는 ```>``` 블럭인용문자를 이용한다.
-```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-
-이 안에서는 다른 마크다운 요소를 포함할 수 있다.
-> ### This is a H3
-> * List
->	```
->	code
->	```
-
-## 2.3. 목록
-### ● 순서있는 목록(번호)
-순서있는 목록은 숫자와 점을 사용한다.
-```
-1. 첫번째
-2. 두번째
-3. 세번째
-```
-1. 첫번째
-2. 두번째
-3. 세번째
-
-**현재까지는 어떤 번호를 입력해도 순서는 내림차순으로 정의된다.**
-```
-1. 첫번째
-3. 세번째
-2. 두번째
-```
-1. 첫번째
-3. 세번째
-2. 두번째
-
-딱히 개선될 것 같지는 않다. 존 그루버가 신경안쓰고 있다고...
-
-### ● 순서없는 목록(글머리 기호: `*`, `+`, `-` 지원)
-```
-* 빨강
-  * 녹색
-    * 파랑
-
-+ 빨강
-  + 녹색
-    + 파랑
-
-- 빨강
-  - 녹색
-    - 파랑
-```
-* 빨강
-  * 녹색
-    * 파랑
-
-+ 빨강
-  + 녹색
-    + 파랑
-
-- 빨강
-  - 녹색
-    - 파랑
-
-혼합해서 사용하는 것도 가능하다(내가 선호하는 방식)
-
-```
-* 1단계
-  - 2단계
-    + 3단계
-      + 4단계
-```
-
-* 1단계
-  - 2단계
-    + 3단계
-      + 4단계
-
-## 2.4. 코드
-4개의 공백 또는 하나의 탭으로 들여쓰기를 만나면 변환되기 시작하여 들여쓰지 않은 행을 만날때까지 변환이 계속된다.
-
-### 2.4.1. 들여쓰기
-```
-This is a normal paragraph:
-
-    This is a code block.
-    
-end code block.
-```
-
-실제로 적용해보면,
-
-적용예:
-
-*****
-This is a normal paragraph:
-
-    This is a code block.
-
-end code block.
-*****
-
-> 한줄 띄어쓰지 않으면 인식이 제대로 안되는 문제가 발생합니다.
-
-```
-This is a normal paragraph:
-    This is a code block.
-end code block.
-```
-
-적용예:
-
-*****
-This is a normal paragraph:
-    This is a code block.
-end code block.
-*****
-
-### 2.4.1. 코드블럭
-코드블럭은 다음과 같이 2가지 방식을 사용할 수 있습니다:
-
-* `<pre><code>{code}</code></pre>` 이용방식
-
-```
-<pre>
-<code>
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
+# 개발 문서 저장소 📚
+
+> 개발 과정에서 필요한 각종 기술 문서, 설정 가이드, 학습 자료를 체계적으로 정리한 저장소입니다.
+
+## 📑 목차
+- [AI 관련 문서](#ai-관련-문서)
+- [백엔드 개발](#백엔드-개발)
+- [프론트엔드 개발](#프론트엔드-개발)
+- [사용법 및 설정](#사용법-및-설정)
+- [유틸리티](#유틸리티)
+- [참고 링크](#참고-링크)
+
+---
+
+## 📁 파일 구조 및 요약
+
+### 🤖 AI 관련 문서
+- **[AI]프롬프트.md** - AI 프롬프트 작성 기법 및 프로젝트 생성 가이드
+  - 10가지 프롬프트 기법 정리 (FewShot, 역할지정기법, Chain of thoughts 등)
+  - Spring Boot 프로젝트 생성을 위한 실용적인 프롬프트 예시
+  - FeignClient 자동 생성 스크립트 및 명명규칙
+  - 개발 표준 문서화를 위한 상세 가이드라인
+
+- **copilot-instructions.md** - GitHub Copilot을 위한 Spring Boot 프로젝트 개발 가이드
+  - AXPORTAL BACKEND 프로젝트 설정 및 기술 스택 정의
+  - 코딩 스타일 가이드 (네이밍 컨벤션, 패키지 구조, 어노테이션 규칙)
+  - REST API 설계 규칙 및 응답 형식 표준화
+  - 데이터베이스 설계, 예외 처리, 테스트 코드 작성 규칙
+  - 보안, 성능 최적화, 문서화 가이드라인
+
+### 🔧 백엔드 개발
+**SpringBoot/**
+- **[Spring]DAO_DTO_Entity차이.md** - Spring의 핵심 계층 구조 이해
+  - DAO, DTO, Entity의 개념 및 역할 설명
+  - Spring Web Layer의 5가지 구성 요소
+  - Controller, Service, Repository 간의 데이터 흐름
+  - 실제 코드 예시를 통한 구현 패턴 제시
+
+- **[SpringBoot]패키지구조.md** - 효율적인 프로젝트 구조 설계
+  - MVC 패턴과 Spring Web Layer의 관계
+  - 계층형 vs 도메인형 구조의 장단점 비교
+  - 유지보수와 인수인계를 고려한 패키지 구조 권장사항
+  - 실제 디렉토리 구조 예시 제공
+
+- **JpaDataType.md** - JPA 데이터 타입 매핑 가이드
+  - Java 타입과 다양한 DB별 타입 매핑 테이블
+  - Database.com, Oracle, MySQL, MS-SQL 등 주요 DB 지원
+  - JPA 어노테이션을 활용한 타입 명시 방법
+
+### 🎨 프론트엔드 개발
+- **[UI]React설치.md** - React 개발환경 완벽 설정 가이드
+  - Node.js 및 pnpm 설치 방법 (Windows 환경)
+  - 3가지 프로젝트 생성 방법 (CRA, Vite, Next.js) 비교
+  - 필수 패키지 설치 (라우팅, 상태관리, UI 라이브러리)
+  - TypeScript 설정, 개발 환경 최적화, 트러블슈팅
+  - 베스트 프랙티스 및 성능 최적화 팁
+
+### 📖 사용법 및 설정
+**Usage/**
+- **[MarkDown].md** - 마크다운 문법 완벽 가이드
+  - 마크다운 기본 문법부터 고급 활용법까지
+  - 헤더, 목록, 코드블럭, 링크, 이미지 등 상세 설명
+  - GitHub, VSCode 등 다양한 플랫폼에서의 활용법
+  - 실제 예시와 함께 제공되는 실용적 가이드
+
+- **STS4_Install.md** - Spring Tool Suite 4 설치 및 설정
+  - STS4 다운로드부터 설치까지 단계별 가이드
+  - Lombok 라이브러리 설치 및 연동 방법
+  - UTF-8 인코딩 설정으로 한글 호환성 확보
+  - 스크린샷을 통한 직관적 설명
+
+**DB/** - 데이터베이스 관련 가이드
+- **[Oracle]계정생성.md** - Oracle 사용자 계정 관리
+  - 관리자 권한 접속 및 계정 생성 절차
+  - 권한 부여 (connect, resource, dba) 방법
+  - 계정 확인, 권한 취소, 삭제 명령어
+  - 실제 SQL 명령어와 실행 결과 예시
+
+- **[Oracle]오브젝트조회.md** - Oracle 메타데이터 조회 가이드
+  - 사용자, 테이블, 시퀀스, 인덱스 등 객체 조회 쿼리
+  - 테이블 구조, 컬럼 정보, 코멘트 조회 방법
+  - DDL 스크립트 생성 및 파일 저장 방법
+  - 개발자가 자주 사용하는 조회 쿼리 모음
+
+- **[Oracle]테이블생성.md** - Oracle 테이블 생성 실무 가이드
+  - 테이블/컬럼 명명 규칙 및 데이터 타입 설명
+  - PRIMARY KEY, INDEX, COMMENT 설정 방법
+  - 실제 프로젝트에서 사용하는 테이블 생성 스크립트
+  - 외래키 관계를 포함한 복합 테이블 구조 예시
+
+**MSA/**
+- **[MSA]HexagonalArchiteture.md** - 헥사고날 아키텍처 가이드
+  - 헥사고날 아키텍처의 개념 및 장점
+  - 포트와 어댑터 패턴의 구체적 설명
+  - 내부 영역(도메인)과 외부 영역(인프라)의 분리
+  - SOLID 원칙 적용 및 테스트 용이성 확보
+
+### 🛠 유틸리티
+- **[Util]윈도우소켓프로세스Killl.md** - Windows 프로세스 관리
+  - netstat 명령어를 활용한 포트 사용 프로세스 확인
+  - taskkill을 이용한 프로세스 강제 종료 방법
+  - 개발 서버 포트 충돌 해결 실무 팁
 
-}
-</code>
-</pre>
-```
+### 🔗 참고 링크
+- **Link.md** - 개발에 유용한 외부 리소스 모음
+  - Java 관련: MapStruct, ObjectMapper, BeanUtils 사용법
+  - Eclipse 최적화 설정 가이드
+  - 실무에서 자주 참조하는 공식 문서 링크
 
-<pre>
-<code>
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-</code>
-</pre>
+---
 
-* 코드블럭코드("\```") 을 이용하는 방법
+## 🎯 활용 방법
 
-<pre>
-<code>
-```
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
-</code>
-</pre>
+### 1. 신규 프로젝트 시작 시
+1. `AI/copilot-instructions.md`를 참조하여 개발 환경 설정
+2. `BackEnd/SpringBoot/` 문서들로 아키텍처 설계
+3. `FrontEnd/[UI]React설치.md`로 프론트엔드 환경 구축
 
-```
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
-
-**깃헙**에서는 코드블럭코드("\```") 시작점에 사용하는 언어를 선언하여 [문법강조(Syntax highlighting)](https://docs.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks#syntax-highlighting)이 가능하다.
-
-<pre>
-<code>
-```java
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
-</code>
-</pre>
-
-```java
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
-
-
-## 2.5. 수평선 ```<hr/>```
-아래 줄은 모두 수평선을 만든다. 마크다운 문서를 미리보기로 출력할 때 *페이지 나누기* 용도로 많이 사용한다.
-
-```
-* * *
+### 2. 개발 중 참고사항
+- `Usage/DB/` 문서들로 데이터베이스 작업 수행
+- `AI/[AI]프롬프트.md`로 AI 도구 효율적 활용
+- `Usage/[MarkDown].md`로 문서 작성 표준화
 
-***
-
-*****
+### 3. 트러블슈팅
+- `Util/` 디렉토리에서 시스템 관리 도구 확인
+- 각 문서의 트러블슈팅 섹션 참조
 
-- - -
-
----------------------------------------
-```
+---
 
-* 적용예
-* * *
+## 📊 문서 통계
 
-***
+| 카테고리 | 파일 수 | 주요 내용 |
+|---------|---------|-----------|
+| AI 관련 | 2개 | 프롬프트 기법, Copilot 설정 |
+| 백엔드 | 3개 | Spring Boot, JPA, 아키텍처 |
+| 프론트엔드 | 1개 | React 환경설정 |
+| 사용법/설정 | 7개 | DB, IDE, 문서 작성법 |
+| 유틸리티 | 1개 | 시스템 관리 도구 |
+| 참고 링크 | 1개 | 외부 리소스 |
 
-*****
+**총 15개 문서**, 개발 전 과정을 아우르는 종합 가이드
 
-- - -
+---
 
----------------------------------------
+## 🔄 업데이트 이력
 
+- **2025-10-18**: React 설치 가이드 pnpm 추가, 목차 생성
+- **2025년 이전**: 각종 개발 문서 작성 및 정리
 
-## 2.6. 링크
-* 참조링크
+---
 
-```
-[link keyword][id]
+## 📝 기여하기
 
-[id]: URL "Optional Title here"
+이 문서들은 실제 개발 경험을 바탕으로 작성되었습니다. 
+- 오타나 개선사항 발견 시 이슈 등록
+- 새로운 기술 스택 추가 시 해당 디렉토리에 문서 추가
+- 기존 문서 업데이트 시 날짜 기록
 
-// code
-Link: [Google][googlelink]
+---
 
-[googlelink]: https://google.com "Go google"
-```
-
-Link: [Google][googlelink]
-
-[googlelink]: https://google.com "Go google"
-
-* 외부링크
-```
-사용문법: [Title](link)
-적용예: [Google](https://google.com, "google link")
-```
-Link: [Google](https://google.com, "google link")
-
-* 자동연결
-```
-일반적인 URL 혹은 이메일주소인 경우 적절한 형식으로 링크를 형성한다.
-
-* 외부링크: <http://example.com/>
-* 이메일링크: <address@example.com>
-```
-
-* 외부링크: <http://example.com/>
-* 이메일링크: <address@example.com>
-
-## 2.7. 강조
-```
-*single asterisks*
-_single underscores_
-**double asterisks**
-__double underscores__
-~~cancelline~~
-```
-
-* *single asterisks*
-* _single underscores_
-* **double asterisks**
-* __double underscores__
-* ~~cancelline~~
-
-> ```문장 중간에 사용할 경우에는 **띄어쓰기** 를 사용하는 것이 좋다.```   
-> 문장 중간에 사용할 경우에는 띄어쓰기를 사용하는 것이 좋다.
-
-
-## 2.8. 이미지
-```
-![Alt text](/path/to/img.jpg)
-![Alt text](/path/to/img.jpg "Optional title")
-```
-![석촌호수 러버덕](http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0)
-![석촌호수 러버덕](http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0 "RubberDuck")
-
-사이즈 조절 기능은 없기 때문에 ```<img width="" height=""></img>```를 이용한다.
-
-예
-```
-<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
-<img src="/path/to/img.jpg" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
-```
-
-<img src="http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
-<img src="http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0" width="40%" height="30%" title="%(비율) 크기 설정" alt="RubberDuck"></img>
-
-## 2.9. 줄바꿈
-3칸 이상 띄어쓰기(` `)를 하면 줄이 바뀐다.
-
-```
-* 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다. 
-이렇게
-
-* 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다.___\\ 띄어쓰기
-이렇게
-```
-
-* 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다. 이렇게
-
-* 줄 바꿈을 하기 위해서는 문장 마지막에서 3칸이상을 띄어쓰기해야 한다.    \
-이렇게
-
-
-****
-# 3. 마크다운 사용기
-## 3.1. 위지윅(WSYWIG) 에디터
-우리가 흔하게 접하는 웹에서 사용되는 에디터(네이버, 다음, 구글 등)이 대부분 위지윅 에디터에 속하며 기본적으로 HTML을 이용하여 스타일을 적용하여 문장을 꾸미는 형태를 취하게 된다. 그래서 하루패드와 같은 마크다운 에디터의 View 영역의 내용을 복사하여 붙여넣기를 하면 대체적으로 View영역에서 보이는 그대로 복사되는 편이다. 다만, 붙여넣기 이후에 문장들을 수정하려고 할 떄 문제가 되는데, 이는 스타일이 포함된 태그가 수정과정에서 변형되면서 전체적인 영향을 끼치는 탓이다. 티스토리 블로그에서는 쉽지 않고... 워드프레스의 경우에는 마크다운으로 작성된 포스트를 HTML로 변환해주는 기능을 활용하는 것이 좋다.
-결론은, **복사해서 붙여넣기하면 가급적이면 본문은 수정하지 않는 것이 좋다.**
-
-## 3.2. 깃헙Github, 비트버킷Bitbucket과 요비Yobi 등
-최근 유행하는 협업개발플랫폼의 경우에는 마크다운을 변환하는 컨버터 기능을 기본탑재하고 있기 때문에 마크다운 문법으로 작성한 텍스트를 그대로 복사해서 붙여넣거나 업로드하는 것만으로 마크다운의 적용이 가능하다.
-
-## 3.3. MS워드 적용
-View 영역의 항목을 그대로 붙여넣거나 HTML 내보내기 등으로 생성한 파일을 불러오는 형태로 사용가능하다. 적용한 헤더를 워드가 읽어드리면서 목차에 적용하기 때문에 이를 활용하면 목차까지도 손쉽게 적용이 가능해진다.
-
-*****
-
-# 4. 정리
-마크다운은 기본문법만 알고있다면 일반 텍스트편집기에서도 손쉽게 작성이 가능한 마크업언어다. 현재 다양한 도구와 플랫폼에서 지원하고 있기 때문에 더욱 손쉽게 스타일적용된 문서를 작성할 수 있어 점점 널리 사용되고 있다.   
-
-> 마크다운을 이해하고 사용하면서 쉽고 빠르게 스타일문서를 작성해보세요.
-
-저는 Dropbox 프로를 구매해서 집-랩탑-스마트폰이 각각 연동을 시켜서 사용하고 있습니다. 드랍박스에 저장된 마크다운 문서는 Dropbox 웹서비스 상에서 제공하기 때문에 웹상에서 바로 열람할 수도 있어 링크를 걸어서 다른 사람과 공유하는 형식으로 사용하고 있다.
-* 링크 예: [Markdown 설명](https://www.dropbox.com/s/mzp9tq4qtfjdlif/20141021_markdown_use_tip.md?dl=0)
-
-***** 
-
-# P.S.
-최근에는 [Notion](https://www.notion.so/product) 을 조금씩 사용중이다. Notion 에서 작성한 문서는 Atom(<https://atom.io/>), Visual Studio Code(<https://code.visualstudio.com/>), Notepad++(<https://notepad-plus-plus.org/>)텍스트 편집기에 복붙(복사하고 붙여넣기)하면 마크다운문법으로 작성된 문장이 기입되고 이지윅 에디터를 제공하는 웹에디터에 붙여넣기 하면 거의 완벽한 형태로 복사된다. 그래서 애용중이다.
-
-## ○ 참고문서
-* [78 Tools for writing and previewing Markdown](http://mashable.com/2013/06/24/markdown-tools/)
-* [John gruber 마크다운 번역](http://nolboo.github.io/blog/2013/09/07/john-gruber-markdown/)
-* [깃허브 취향의 마크다운 번역](http://nolboo.github.io/blog/2014/03/25/github-flavored-markdown/)
-* [허니몬의 마크다운 작성법](http://www.slideshare.net/ihoneymon/ss-40575068)
-* Notion.so(<https://www.notion.so/product>)
-* Atom(<https://atom.io/>)
-* Visual Studio Code(<https://code.visualstudio.com/>)
-* Notepad++(<https://notepad-plus-plus.org/>)
+**📧 Contact**: ByounggwanLee  
+**🏷 Tags**: `Spring Boot` `React` `Oracle` `AI` `개발가이드` `문서화`
