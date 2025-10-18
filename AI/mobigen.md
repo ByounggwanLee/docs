@@ -1,0 +1,11 @@
+https://adxp.mobigen.com/api/v1/serving/openapi.json의 내용중 paths별로 서비스를 사용 할 수 있는 FeignClient를 생
+- service: client.sktai.serving.service
+  - 환경설정(application.yml)을 참조 금지
+- client : client.sktai.serving
+- config,intercept(공통사용)
+  - 공통기능 신규추가 금지
+  - client.sktai.config에 생성
+  - config,intercept사용하는 Dto는 client.sktai.common.dto에 생성
+- dto: feign client에 정의된 이름과 동일하게 생성
+  - request:  client.sktai.serving.dto.request
+  - response:  client.sktai.serving.dto.response
