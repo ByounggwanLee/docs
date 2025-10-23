@@ -1,0 +1,47 @@
+일단 백신 프로그램이 설치 되어 있으면 먼저 꺼주세요.
+먼저 Win + x 로 들어가서 Windows powershell 관리자 모드로 실행해줍니다.
+- irm https://get.activated.win | iex 를 실행
+---
+        ______________________________________________________________
+
+                 Activation Methods:
+
+             [1] HWID                - Windows
+             [2] Ohook               - Office
+             [3] TSforge             - Windows / Office / ESU
+             [4] KMS38               - Windows
+             [5] Online KMS          - Windows / Office
+             __________________________________________________
+
+             [6] Check Activation Status
+             [7] Change Windows Edition
+             [8] Change Office Edition
+             __________________________________________________
+
+             [9] Troubleshoot
+             [E] Extras
+             [H] Help
+             [0] Exit
+       ______________________________________________________________
+
+         Choose a menu option using your keyboard [1,2,3...E,H,0] : 2
+---
+- 그후에 이 화면에서 2번을 눌러줍니다.
+---
+        ____________________________________________________________
+
+                [1] Install Ohook Office Activation
+
+                [2] Uninstall Ohook
+                ____________________________________________
+
+                [3] Download Office
+
+                [0] Go back
+        ____________________________________________________________
+
+             Choose a menu option using your keyboard [1,2,3,0] 1
+---
+- 그 다음 화면에서 1번을 눌러주시면 모든 준비가 끝났습니다.
+
+- 상업용으로 쓰시면 고소 받을 확률이 있으니,꼭! 개인용으로만 하세요~
