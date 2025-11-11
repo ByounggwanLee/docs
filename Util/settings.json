@@ -1,0 +1,30 @@
+{
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "args": ["-NoExit", "-Command", "chcp 65001"]
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": ["/k", "chcp 65001"]
+        },
+        "Git Bash": {
+            "source": "Git Bash",
+            "env": {
+                "LANG": "ko_KR.UTF-8"
+            }
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.env.windows": {
+        "LANG": "ko_KR.UTF-8",
+        "LC_ALL": "ko_KR.UTF-8"
+    },
+    "terminal.integrated.shellArgs.windows": ["/k", "chcp 65001"],
+    "files.encoding": "utf8",
+    "files.autoGuessEncoding": true,
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "interactive"
+}
