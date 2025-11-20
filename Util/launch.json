@@ -1,0 +1,102 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "AxportalBackendApplication",
+            "request": "launch",
+            "mainClass": "com.skax.aiplatform.AxportalBackendApplication",
+            "projectName": "aiplatform"
+        },
+        {
+            "type": "java",
+            "name": "AxPortal Backend - elocal",
+            "request": "launch",
+            "mainClass": "com.skax.aiplatform.AxportalBackendApplication",
+            "projectName": "aiplatform",
+            "args": [],
+            "vmArgs": [
+                "-Dspring.profiles.active=elocal",
+                "-Dspring.jmx.enabled=false",
+                "-Dcom.sun.management.jmxremote=false",
+                "-Xms512m",
+                "-Xmx2g"
+            ],
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "elocal",
+                "DATAPIPELINE_MONITOR_CRON": "0 0 0 * * ?" // Local 환경에서 매일 자정에 실행
+            },
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "java",
+            "name": "AxPortal Backend - local",
+            "request": "launch",
+            "mainClass": "com.skax.aiplatform.AxportalBackendApplication",
+            "projectName": "aiplatform",
+            "args": [],
+            "vmArgs": [
+                "-Dspring.profiles.active=local",
+                "-Dspring.jmx.enabled=false",
+                "-Dcom.sun.management.jmxremote=false",
+                "-Xms512m",
+                "-Xmx2g"
+            ],
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "local",
+                "DATAPIPELINE_MONITOR_CRON": "0 0 0 * * ?"  // Local 환경에서 매일 자정에 실행
+            },
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "java",
+            "name": "AxPortal Backend - edev",
+            "request": "launch",
+            "mainClass": "com.skax.aiplatform.AxportalBackendApplication",
+            "projectName": "aiplatform",
+            "args": [],
+            "vmArgs": [
+                "-Dspring.profiles.active=edev",
+                "-Xms512m",
+                "-Xmx2g"
+            ],
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "edev"
+            },
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "java",
+            "name": "AxPortal Backend - dev",
+            "request": "launch",
+            "mainClass": "com.skax.aiplatform.AxportalBackendApplication",
+            "projectName": "aiplatform",
+            "args": [],
+            "vmArgs": [
+                "-Dspring.profiles.active=dev",
+                "-Xms512m",
+                "-Xmx2g"
+            ],
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "dev"
+            },
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach) - Remote JVM",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": "5005",
+            "timeout": 30000
+        }
+    ]
+}
