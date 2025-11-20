@@ -1,4 +1,71 @@
+// ==========================================
+// VSCode 사용자 설정 파일
+// 파일 위치: C:\Users\lbg12\AppData\Roaming\Code\User\settings.json
+// 설명: Visual Studio Code 전역 사용자 설정
+// ==========================================
 {
+    // ==========================================
+    // Git 설정 (Git Configuration)
+    // ==========================================
+    
+    // Git 자동 fetch 활성화
+    "git.autofetch": true,
+    
+    // ==========================================
+    // Java 개발 환경 설정 (Java Development)
+    // ==========================================
+    
+    // Java Language Server 기본 JDK 경로 (JDK 25)
+    "java.jdt.ls.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.1.8-hotspot",
+    
+    // Java 런타임 환경 설정 (다중 JDK 지원)
+    "java.configuration.runtimes": [   
+        {
+            "name": "JavaSE-25",
+            "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.1.8-hotspot",
+            "default": true
+        },
+        {
+            "name": "JavaSE-17",
+            "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.16.8-hotspot"
+        }
+    ],
+    
+    // Java Null 분석 모드: 자동
+    "java.compile.nullAnalysis.mode": "automatic",
+    
+    // Java 빌드 설정 업데이트: 대화형 모드
+    "java.configuration.updateBuildConfiguration": "interactive",
+    
+    // ==========================================
+    // IntelliCode 설정 (AI Code Completion)
+    // ==========================================
+    
+    // IntelliCode 자동완성 비활성화 (GitHub Copilot 사용)
+    "vsintellicode.java.completionsEnabled": false,
+    "vsintellicode.typescript.completionsEnabled": false,
+    "vsintellicode.python.completionsEnabled": false,
+    "vsintellicode.sql.completionsEnabled": false,
+    
+    // ==========================================
+    // GitHub Copilot 설정
+    // ==========================================
+    
+    // Copilot 다음 편집 제안 활성화
+    "github.copilot.nextEditSuggestions.enabled": true,
+    
+    // ==========================================
+    // Red Hat 확장 설정
+    // ==========================================
+    
+    // Red Hat 원격 분석 활성화
+    "redhat.telemetry.enabled": true,
+    
+    // ==========================================
+    // 터미널 설정 (Terminal Configuration)
+    // ==========================================
+    
+    // Windows 터미널 프로파일 설정 (UTF-8 인코딩 강제)
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
@@ -17,14 +84,45 @@
             }
         }
     },
+    
+    // 기본 터미널: Command Prompt
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    
+    // 터미널 환경 변수 (한글 인코딩 지원)
     "terminal.integrated.env.windows": {
         "LANG": "ko_KR.UTF-8",
         "LC_ALL": "ko_KR.UTF-8"
     },
+    
+    // 터미널 쉘 인자 (UTF-8 코드페이지 설정)
     "terminal.integrated.shellArgs.windows": ["/k", "chcp 65001"],
+    
+    // 터미널 스크롤백 버퍼 크기 (라인 수)
+    "terminal.integrated.scrollback": 10000,
+    
+    // ==========================================
+    // 파일 인코딩 설정 (File Encoding)
+    // ==========================================
+    
+    // 기본 파일 인코딩: UTF-8
     "files.encoding": "utf8",
+    
+    // 인코딩 자동 감지 활성화
     "files.autoGuessEncoding": true,
-    "java.compile.nullAnalysis.mode": "automatic",
-    "java.configuration.updateBuildConfiguration": "interactive"
+    
+    // ==========================================
+    // 에디터 저장 시 자동 작업 (Editor Save Actions)
+    // ==========================================
+    
+    // 전역 설정: 저장 시 import 자동 정리
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    
+    // Java 파일 전용 설정: 저장 시 import 자동 정리
+    "[java]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    }
 }
