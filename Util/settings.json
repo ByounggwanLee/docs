@@ -7,19 +7,15 @@
     // ==========================================
     // Git 설정 (Git Configuration)
     // ==========================================
-    
     // Git 자동 fetch 활성화
     "git.autofetch": true,
-    
     // ==========================================
     // Java 개발 환경 설정 (Java Development)
     // ==========================================
-    
     // Java Language Server 기본 JDK 경로 (JDK 25)
     "java.jdt.ls.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.1.8-hotspot",
-    
     // Java 런타임 환경 설정 (다중 JDK 지원)
-    "java.configuration.runtimes": [   
+    "java.configuration.runtimes": [
         {
             "name": "JavaSE-25",
             "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.1.8-hotspot",
@@ -30,52 +26,49 @@
             "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.16.8-hotspot"
         }
     ],
-    
     // Java Null 분석 모드: 자동
     "java.compile.nullAnalysis.mode": "automatic",
-    
     // Java 빌드 설정 업데이트: 대화형 모드
     "java.configuration.updateBuildConfiguration": "interactive",
-    
     // ==========================================
     // IntelliCode 설정 (AI Code Completion)
     // ==========================================
-    
     // IntelliCode 자동완성 비활성화 (GitHub Copilot 사용)
     "vsintellicode.java.completionsEnabled": false,
     "vsintellicode.typescript.completionsEnabled": false,
     "vsintellicode.python.completionsEnabled": false,
     "vsintellicode.sql.completionsEnabled": false,
-    
     // ==========================================
     // GitHub Copilot 설정
     // ==========================================
-    
     // Copilot 다음 편집 제안 활성화
     "github.copilot.nextEditSuggestions.enabled": true,
-    
     // ==========================================
     // Red Hat 확장 설정
     // ==========================================
-    
     // Red Hat 원격 분석 활성화
     "redhat.telemetry.enabled": true,
-    
     // ==========================================
     // 터미널 설정 (Terminal Configuration)
     // ==========================================
-    
     // Windows 터미널 프로파일 설정 (UTF-8 인코딩 강제)
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
-            "args": ["-NoExit", "-Command", "chcp 65001"]
+            "args": [
+                "-NoExit",
+                "-Command",
+                "chcp 65001"
+            ]
         },
         "Command Prompt": {
             "path": [
                 "${env:windir}\\System32\\cmd.exe"
             ],
-            "args": ["/k", "chcp 65001"]
+            "args": [
+                "/k",
+                "chcp 65001"
+            ]
         },
         "Git Bash": {
             "source": "Git Bash",
@@ -84,69 +77,83 @@
             }
         }
     },
-    
     // 기본 터미널: Command Prompt
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
-    
     // 터미널 환경 변수 (한글 인코딩 지원)
     "terminal.integrated.env.windows": {
         "LANG": "ko_KR.UTF-8",
         "LC_ALL": "ko_KR.UTF-8"
     },
-    
     // 터미널 쉘 인자 (UTF-8 코드페이지 설정)
-    "terminal.integrated.shellArgs.windows": ["/k", "chcp 65001"],
-    
+    "terminal.integrated.shellArgs.windows": [
+        "/k",
+        "chcp 65001"
+    ],
     // 터미널 스크롤백 버퍼 크기 (라인 수)
     "terminal.integrated.scrollback": 10000,
-    
     // ==========================================
     // 파일 인코딩 설정 (File Encoding)
     // ==========================================
-    
     // 기본 파일 인코딩: UTF-8
     "files.encoding": "utf8",
-    
     // 인코딩 자동 감지 활성화
     "files.autoGuessEncoding": true,
-    
     // ==========================================
     // 에디터 저장 시 자동 작업 (Editor Save Actions)
     // ==========================================
-    
-    // 전역 설정: 저장 시 import 자동 정리
+    // 전역 설정: 저장 시 자동 작업
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": "explicit"
     },
-    
-    // Java 파일 전용 설정: 저장 시 import 자동 정리
+    // Java 파일 전용 설정: 저장 시 import 자동 정리 + 코드 포맷팅
     "[java]": {
+        "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         }
     },
-    
+    // JavaScript/TypeScript 파일 전용 설정
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    // JSON 파일 전용 설정
+    "[json]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // XML 파일 전용 설정
+    "[xml]": {
+        "editor.formatOnSave": true
+    },
+    // YAML 파일 전용 설정
+    "[yaml]": {
+        "editor.formatOnSave": true
+    },
     // ==========================================
     // Git/Source Control 설정 (Git Configuration)
     // ==========================================
-    
     // Git 커밋 메시지 자동 생성 활성화 (GitHub Copilot 사용)
     "git.enableSmartCommit": true,
-    
     // 변경사항이 있을 때 자동으로 fetch
     "git.autofetch": true,
-    
     // 빈 커밋 메시지 확인 안함 (Copilot 메시지 생성 후 검토 가능)
     "git.allowNoVerifyCommit": false,
-    
     // GitHub Copilot 커밋 메시지 생성 설정
     "github.copilot.chat.localeOverride": "ko",
-    
     // Copilot에게 한글 커밋 메시지 생성 요청을 위한 프롬프트 가이드
     // Source Control 메시지 입력창의 sparkle 아이콘(✨) 클릭 시:
     // - "변경사항을 한글로 요약해주세요" 라고 추가 요청 가능
     // - 또는 Copilot Chat에서 "/git 변경사항을 한글 커밋 메시지로 작성해줘" 사용
-    
     // 커밋 메시지 템플릿 (선택사항)
     "git.inputValidationLength": 72,
     "git.inputValidationSubjectLength": 50
