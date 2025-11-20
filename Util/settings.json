@@ -124,5 +124,30 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         }
-    }
+    },
+    
+    // ==========================================
+    // Git/Source Control 설정 (Git Configuration)
+    // ==========================================
+    
+    // Git 커밋 메시지 자동 생성 활성화 (GitHub Copilot 사용)
+    "git.enableSmartCommit": true,
+    
+    // 변경사항이 있을 때 자동으로 fetch
+    "git.autofetch": true,
+    
+    // 빈 커밋 메시지 확인 안함 (Copilot 메시지 생성 후 검토 가능)
+    "git.allowNoVerifyCommit": false,
+    
+    // GitHub Copilot 커밋 메시지 생성 설정
+    "github.copilot.chat.localeOverride": "ko",
+    
+    // Copilot에게 한글 커밋 메시지 생성 요청을 위한 프롬프트 가이드
+    // Source Control 메시지 입력창의 sparkle 아이콘(✨) 클릭 시:
+    // - "변경사항을 한글로 요약해주세요" 라고 추가 요청 가능
+    // - 또는 Copilot Chat에서 "/git 변경사항을 한글 커밋 메시지로 작성해줘" 사용
+    
+    // 커밋 메시지 템플릿 (선택사항)
+    "git.inputValidationLength": 72,
+    "git.inputValidationSubjectLength": 50
 }
