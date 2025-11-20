@@ -1,6 +1,14 @@
+// 파일위치: .vscode/launch.json
 {
+    // ==========================================
+    // VS Code Launch Configuration
+    // Java 애플리케이션 디버그 및 실행 설정
+    // ==========================================
     "version": "0.2.0",
     "configurations": [
+        // ==========================================
+        // 기본 설정 (프로파일 미지정)
+        // ==========================================
         {
             "type": "java",
             "name": "AxportalBackendApplication",
@@ -8,6 +16,13 @@
             "mainClass": "com.skax.aiplatform.AxportalBackendApplication",
             "projectName": "aiplatform"
         },
+        
+        // ==========================================
+        // 외부 로컬 환경 (elocal) - 기본 개발 환경 ⭐
+        // Database: H2 in-memory
+        // JMX: 비활성화 (DevTools 충돌 방지)
+        // Memory: 최소 512MB, 최대 2GB
+        // ==========================================
         {
             "type": "java",
             "name": "AxPortal Backend - elocal",
@@ -15,21 +30,30 @@
             "mainClass": "com.skax.aiplatform.AxportalBackendApplication",
             "projectName": "aiplatform",
             "args": [],
+            // JVM 옵션
             "vmArgs": [
-                "-Dspring.profiles.active=elocal",
-                "-Dspring.jmx.enabled=false",
-                "-Dcom.sun.management.jmxremote=false",
-                "-Xms512m",
-                "-Xmx2g"
+                "-Dspring.profiles.active=elocal",        // Spring 프로파일: 외부 로컬
+                "-Dspring.jmx.enabled=false",             // JMX 비활성화
+                "-Dcom.sun.management.jmxremote=false",   // JMX Remote 비활성화
+                "-Xms512m",                                // 최소 힙 메모리: 512MB
+                "-Xmx2g"                                   // 최대 힙 메모리: 2GB
             ],
+            // 환경 변수
             "env": {
                 "SPRING_PROFILES_ACTIVE": "elocal",
-                "DATAPIPELINE_MONITOR_CRON": "0 0 0 * * ?" // Local 환경에서 매일 자정에 실행
+                "DATAPIPELINE_MONITOR_CRON": "0 0 0 * * ?" // 매일 자정 실행 (개발 환경)
             },
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "internalConsoleOptions": "openOnSessionStart"
+            "console": "internalConsole",                  // 내부 콘솔 사용
+            "stopOnEntry": false,                          // 시작 시 중단 안함
+            "internalConsoleOptions": "openOnSessionStart" // 세션 시작 시 콘솔 자동 열기
         },
+        
+        // ==========================================
+        // 로컬 환경 (local)
+        // Database: H2 in-memory
+        // JMX: 비활성화
+        // Memory: 최소 512MB, 최대 2GB
+        // ==========================================
         {
             "type": "java",
             "name": "AxPortal Backend - local",
@@ -37,21 +61,30 @@
             "mainClass": "com.skax.aiplatform.AxportalBackendApplication",
             "projectName": "aiplatform",
             "args": [],
+            // JVM 옵션
             "vmArgs": [
-                "-Dspring.profiles.active=local",
-                "-Dspring.jmx.enabled=false",
-                "-Dcom.sun.management.jmxremote=false",
-                "-Xms512m",
-                "-Xmx2g"
+                "-Dspring.profiles.active=local",         // Spring 프로파일: 로컬
+                "-Dspring.jmx.enabled=false",             // JMX 비활성화
+                "-Dcom.sun.management.jmxremote=false",   // JMX Remote 비활성화
+                "-Xms512m",                                // 최소 힙 메모리: 512MB
+                "-Xmx2g"                                   // 최대 힙 메모리: 2GB
             ],
+            // 환경 변수
             "env": {
                 "SPRING_PROFILES_ACTIVE": "local",
-                "DATAPIPELINE_MONITOR_CRON": "0 0 0 * * ?"  // Local 환경에서 매일 자정에 실행
+                "DATAPIPELINE_MONITOR_CRON": "0 0 0 * * ?"  // 매일 자정 실행 (개발 환경)
             },
             "console": "internalConsole",
             "stopOnEntry": false,
             "internalConsoleOptions": "openOnSessionStart"
         },
+        
+        // ==========================================
+        // 외부 개발 환경 (edev)
+        // Database: PostgreSQL
+        // JMX: 활성화 (기본)
+        // Memory: 최소 512MB, 최대 2GB
+        // ==========================================
         {
             "type": "java",
             "name": "AxPortal Backend - edev",
@@ -59,11 +92,13 @@
             "mainClass": "com.skax.aiplatform.AxportalBackendApplication",
             "projectName": "aiplatform",
             "args": [],
+            // JVM 옵션
             "vmArgs": [
-                "-Dspring.profiles.active=edev",
-                "-Xms512m",
-                "-Xmx2g"
+                "-Dspring.profiles.active=edev",          // Spring 프로파일: 외부 개발
+                "-Xms512m",                                // 최소 힙 메모리: 512MB
+                "-Xmx2g"                                   // 최대 힙 메모리: 2GB
             ],
+            // 환경 변수
             "env": {
                 "SPRING_PROFILES_ACTIVE": "edev"
             },
@@ -71,6 +106,13 @@
             "stopOnEntry": false,
             "internalConsoleOptions": "openOnSessionStart"
         },
+        
+        // ==========================================
+        // 개발 환경 (dev)
+        // Database: Tibero
+        // JMX: 활성화 (기본)
+        // Memory: 최소 512MB, 최대 2GB
+        // ==========================================
         {
             "type": "java",
             "name": "AxPortal Backend - dev",
@@ -78,11 +120,13 @@
             "mainClass": "com.skax.aiplatform.AxportalBackendApplication",
             "projectName": "aiplatform",
             "args": [],
+            // JVM 옵션
             "vmArgs": [
-                "-Dspring.profiles.active=dev",
-                "-Xms512m",
-                "-Xmx2g"
+                "-Dspring.profiles.active=dev",           // Spring 프로파일: 개발
+                "-Xms512m",                                // 최소 힙 메모리: 512MB
+                "-Xmx2g"                                   // 최대 힙 메모리: 2GB
             ],
+            // 환경 변수
             "env": {
                 "SPRING_PROFILES_ACTIVE": "dev"
             },
@@ -90,13 +134,22 @@
             "stopOnEntry": false,
             "internalConsoleOptions": "openOnSessionStart"
         },
+        
+        // ==========================================
+        // 원격 디버깅 설정 (Remote Debug)
+        // 원격 JVM에 디버거 연결
+        // 사용법:
+        //   1. 원격 서버에서 JVM 시작 시 디버그 옵션 추가:
+        //      -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+        //   2. VS Code에서 이 설정 실행
+        // ==========================================
         {
             "type": "java",
             "name": "Debug (Attach) - Remote JVM",
             "request": "attach",
-            "hostName": "localhost",
-            "port": "5005",
-            "timeout": 30000
+            "hostName": "localhost",                      // 원격 호스트 (localhost 또는 IP)
+            "port": "5005",                                // 디버그 포트 (기본 5005)
+            "timeout": 30000                               // 연결 타임아웃: 30초
         }
     ]
 }
